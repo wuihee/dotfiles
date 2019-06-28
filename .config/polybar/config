@@ -1,0 +1,236 @@
+; POLYBAR CONFIG
+
+[colors]
+;background = ${xrdb:color0:#222}
+background = #222
+background-alt = #2D3B40
+;foreground = ${xrdb:color7:#222}
+foreground = #dfdfdf
+foreground-alt = #999999
+primary = #57F2AA
+secondary = #e60053
+alert = #e60053
+
+
+[bar/top]
+monitor = DP1
+width = 100%
+height = 32
+
+font-0 = FontAwesome:size=11;2
+font-1 = HackNerdFontMono:size=11;2
+
+#background = #aa0b0e0f
+background = #191919
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-top-size = 10
+border-left-size = 14
+border-right-size = 14
+border-bottom-size = 0
+border-color = #00000000
+
+padding-left = 2
+padding-right = 5
+
+module-margin-left = 4
+module-margin-right = 2
+
+modules-left = i3
+modules-center = player-mpris-tail
+modules-right = pulseaudio memory cpu network date powermenu
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+pin-workspaces = true
+
+label-mode-padding = 4
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+; workspace icons
+ws-icon-active-font = 1
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+ws-icon-default = 
+
+; focused = Active workspace on focused monitor
+label-focused = %icon%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 4
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %icon%
+label-unfocused-padding = 4
+
+; visible = Active workspace on unfocused monitor
+label-visible = %icon%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %icon%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 4
+
+; Separator in between workspaces
+; label-separator = |
+
+
+[module/player-mpris-tail]
+type = custom/script
+exec = python ~/.config/polybar/player-mpris-tail.py --icon-playing  --icon-paused  --icon-stopped  -f '{:artist:t18:{artist}:}{:artist:: :} {:t40:{title}:} %{A1:python ~/.config/polybar/player-mpris-tail.py previous:}   %{A} %{A1:python ~/.config/polybar/player-mpris-tail.py play-pause:} {icon-reversed} %{A} %{A1:python ~/.config/polybar/player-mpris-tail.py next:}   %{A}'
+tail = true
+label = %output%
+format-underline = #57F2AA
+
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = "  "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #2BABD9
+label = %percentage_used%%
+
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #32A685
+label = %percentage:2%%
+
+
+[module/network]
+type = internal/network
+interface = wlp58s0
+interval = 3.0
+
+label-connected = %essid% %downspeed:9%
+label-connected-foreground = #eefafafa
+label-disconnected = not connected
+label-disconnected-foreground = #66ffffff
+format-connected-underline = #B16761
+
+format-connected = <ramp-signal> <label-connected>
+format-disconnected = <label-disconnected>
+ramp-signal-foreground = ${colors.foreground-alt}
+; Worst
+ramp-signal-0 = " "
+ramp-signal-1 = " "
+ramp-signal-2 = " "
+ramp-signal-3 = " "
+ramp-signal-4 = " "
+; Best
+ramp-signal-5 = " "
+
+
+[module/date]
+type = internal/date
+interval = 5
+
+date =
+date-alt = " %Y-%m-%d"
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #D92B54
+
+label = %date% %time%
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <label-volume> <bar-volume>
+label-volume = VOL  %percentage%%
+label-volume-foreground = ${root.foreground}
+
+label-muted =   muted
+label-muted-foreground = #666
+
+bar-volume-width = 5
+bar-volume-foreground-0 = #0b8e81
+bar-volume-foreground-1 = #0b8e81
+bar-volume-foreground-2 = #0b8e81
+bar-volume-foreground-3 = #0b8e81
+bar-volume-foreground-4 = #0b8e81
+bar-volume-foreground-5 = #0b8e81
+bar-volume-foreground-6 = #0b8e81
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+format-spacing = 1
+
+label-open =   power
+label-open-foreground = ${colors.secondary}
+label-close =   cancel
+label-close-foreground = ${colors.secondary}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = sudo reboot
+
+menu-2-0 = power off
+menu-2-0-exec = sudo poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini

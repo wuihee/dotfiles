@@ -1,0 +1,44 @@
+* {
+    selected-normal-background: #504b49;
+    background-color: #3c3836;
+    color: #B4A88B;
+    padding: 10;
+    /*
+    normal-foreground:           @foreground;
+    alternate-normal-background: rgba ( 69, 90, 100, 100 % );
+    selected-urgent-foreground:  rgba ( 253, 246, 227, 100 % );
+    urgent-foreground:           rgba ( 255, 82, 82, 100 % );
+    alternate-urgent-background: rgba ( 69, 90, 100, 100 % );
+    active-foreground:           rgba ( 0, 188, 212, 100 % );
+    selected-active-foreground:  rgba ( 253, 246, 227, 100 % );
+    alternate-active-background: rgba ( 69, 90, 100, 100 % );
+    background:                  rgba ( 58, 76, 84, 100 % );
+    bordercolor:                 rgba ( 42, 55, 62, 100 % );
+    alternate-normal-foreground: @foreground;
+    selected-normal-foreground:  #B4A88B;
+    foreground:                  #B4A88B;
+    red:                         rgba ( 220, 50, 47, 100 % );
+    blue:                        rgba ( 38, 139, 210, 100 % );
+    lightbg:                     rgba ( 238, 232, 213, 100 % );
+    lightfg:                     rgba ( 88, 104, 117, 100 % );
+    normal-background:           rgba ( 69, 90, 100, 100 % );
+    border-color:                @foreground;
+    separatorcolor:              rgba ( 195, 198, 200, 100 % );
+    spacing:                     2;
+    urgent-background:           #000;
+    selected-urgent-background:  rgba ( 255, 82, 82, 100 % );
+    alternate-urgent-foreground: @urgent-foreground;
+    alternate-active-foreground: @active-foreground;
+    active-background:           rgba ( 69, 90, 100, 100 % );
+    selected-active-background:  rgba ( 0, 150, 136, 100 % );
+    */
+}
+
+#element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+#element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
