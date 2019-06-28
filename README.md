@@ -5,4 +5,5 @@
 * Rofi: https://github.com/davatorium/rofi/wiki/Themes
 * flashfocus: https://github.com/fennerm/flashfocus
 * peaclock: https://github.com/octobanana/peaclock#dependencies
-* trueline: https://github.com/petobens/trueline
+* trueline (fancy terminal prompt): https://github.com/petobens/trueline
+* feh (for wallpaper): https://wiki.archlinux.org/index.php/Feh
