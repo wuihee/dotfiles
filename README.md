@@ -1,4 +1,4 @@
-# Stuff
+# Dotfiles
 
 ## Programs I Use
 * Polybar: https://github.com/polybar/polybar
