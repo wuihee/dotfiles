@@ -1,13 +1,18 @@
 ; POLYBAR CONFIG
 
+;COLOR SCHEME
+;#19141D
+;#747A67
+;#A2A596
+;#C4C8A8
+;#E9CBAC
+
 [colors]
-;background = ${xrdb:color0:#222}
 background = #222
 background-alt = #2D3B40
-;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #999999
-primary = #57F2AA
+foreground = #E9CBAC
+foreground-alt = #E9CBAC
+primary = #747A67
 secondary = #e60053
 alert = #e60053
 
@@ -20,18 +25,17 @@ height = 32
 font-0 = FontAwesome:size=11;2
 font-1 = HackNerdFontMono:size=11;2
 
-#background = #aa0b0e0f
-background = #191919
+background = #19141D
 foreground = ${colors.foreground}
 
 line-size = 3
 line-color = #f00
 
-border-top-size = 10
-border-left-size = 14
-border-right-size = 14
-border-bottom-size = 0
-border-color = #00000000
+;border-top-size = 10
+;border-left-size = 24
+;border-right-size = 24
+;border-bottom-size = 0
+;border-color = #00000000
 
 padding-left = 2
 padding-right = 5
@@ -104,7 +108,7 @@ type = custom/script
 exec = python ~/.config/polybar/player-mpris-tail.py --icon-playing  --icon-paused  --icon-stopped  -f '{:artist:t18:{artist}:}{:artist:: :} {:t40:{title}:} %{A1:python ~/.config/polybar/player-mpris-tail.py previous:}   %{A} %{A1:python ~/.config/polybar/player-mpris-tail.py play-pause:} {icon-reversed} %{A} %{A1:python ~/.config/polybar/player-mpris-tail.py next:}   %{A}'
 tail = true
 label = %output%
-format-underline = #57F2AA
+format-underline = #747A67
 
 
 [module/memory]
@@ -131,7 +135,7 @@ interface = wlp58s0
 interval = 3.0
 
 label-connected = %essid% %downspeed:9%
-label-connected-foreground = #eefafafa
+label-connected-foreground = #E9CBAC
 label-disconnected = not connected
 label-disconnected-foreground = #66ffffff
 format-connected-underline = #B16761
@@ -176,13 +180,13 @@ label-muted =   muted
 label-muted-foreground = #666
 
 bar-volume-width = 5
-bar-volume-foreground-0 = #0b8e81
-bar-volume-foreground-1 = #0b8e81
-bar-volume-foreground-2 = #0b8e81
-bar-volume-foreground-3 = #0b8e81
-bar-volume-foreground-4 = #0b8e81
-bar-volume-foreground-5 = #0b8e81
-bar-volume-foreground-6 = #0b8e81
+bar-volume-foreground-0 = #747A67
+bar-volume-foreground-1 = #747A67
+bar-volume-foreground-2 = #747A67
+bar-volume-foreground-3 = #747A67
+bar-volume-foreground-4 = #747A67
+bar-volume-foreground-5 = #747A67
+bar-volume-foreground-6 = #747A67
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2

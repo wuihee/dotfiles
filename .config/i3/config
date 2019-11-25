@@ -135,12 +135,13 @@ bindsym Mod4+Shift+9 move container to workspace $ws9
 bindsym Mod4+Shift+0 move container to workspace $ws10
 
 # Assigned workspaces
-assign [class="Firefox"] $ws1
-exec --no-startup-id firefox
+assign [class="Brave-browser"] $ws1
+exec --no-startup-id brave
 assign [class="Terminator"] $ws2
 exec --no-startup-id terminator
 assign [class="Atom"] $ws3
 exec --no-startup-id atom
+assign [class="Steam"] $ws9
 assign [class="Spotify"] $ws10
 exec --no-startup-id spotify
 # Because assign [class="Spotify"] $ws10 doesn't work.
@@ -188,12 +189,12 @@ bindsym Mod4+r mode "resize"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Gaps
-gaps inner 10
-gaps outer 6
+gaps outer 4
+gaps inner 18
 
 # Border Style
 for_window [class=".*"] border pixel 0
-client.focused #262626 #262626 #ffffff #262626 #262626
+client.focused #19141D #19141D #19141D #19141D #19141D
 
 
 # Pulse Audio controls

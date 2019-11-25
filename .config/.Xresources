@@ -1,0 +1,23 @@
+*background:  #19141D
+*foreground:  #E9CBAC
+*color0:  #152302
+*color1:  #d40038
+*color2:  #C4C8A8
+*color3:  #d47a00
+*color4:  #78008b
+*color5:  #d40089
+*color6:  #1e948b
+*color7:  #cbcdc8
+*color8:  #5b7759
+*color9:  #e53e46
+*color10:  #C4C8A8
+*color11:  #e5961e
+*color12:  #873e9c
+*color13:  #c03e9c
+*color14:  #67bc74
+*color15:  #ffffff
+
+URxvt.scrollBar: false
+URxvt.boldFont: xft:Hack Nerd Font:size=11,style=Bold
+URxvt.font: xft:Hack Nerd Font:size=11
+URxvt.internalBorder: 20
